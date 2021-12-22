@@ -22,6 +22,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 DatasetsTypes= ["Middle", "SmallMiddle", "Moving_Middle", "Moving_SmallMiddle", "RareTime", "Moving_RareTime", "RareFeature","Moving_RareFeature","PostionalTime", "PostionalFeature"]
 
+#DatasetsTypes = []
+
 ImpTimeSteps=[30,14,30,15,6,6, 40,40,20,20]
 ImpFeatures=[30,14,30,15,40,40,6,6,20,20]
 
@@ -36,7 +38,7 @@ FreezeType = [None,None,None,None,None,None,None,None,"Feature","Time"]
 isMoving=[False,False,True,True,False,True,False,True,None,None]
 isPositional=[False,False,False,False,False,False,False,False,True,True]
 
-DataGenerationTypes=[None ,"Harmonic", "GaussianProcess", "PseudoPeriodic", "AutoRegressive" ,"CAR","NARMA" ]
+DataGenerationTypes=["GaussianProcess", "PseudoPeriodic", "AutoRegressive"]
 
 models=["Transformer" ,"LSTMWithInputCellAttention","TCN","LSTM"]
 
@@ -46,34 +48,34 @@ def main(args):
 	createDatasets(args,DatasetsTypes,ImpTimeSteps,ImpFeatures,StartImpTimeSteps,StartImpFeatures,Loc1,Loc2,FreezeType,isMoving,isPositional,DataGenerationTypes)
 
 	#Train Models
-	train_models(args,DatasetsTypes,DataGenerationTypes,models,device)
+#	train_models(args,DatasetsTypes,DataGenerationTypes,models,device)
 
 
 	#Decreasing batch size for captum 
 	args.batch_size=10
 
 	#Get Saliency maps
-	interpret(args,DatasetsTypes,DataGenerationTypes,models,device)
+#	interpret(args,DatasetsTypes,DataGenerationTypes,models,device)
 
 	#create Masks
-	createMasks(args,DatasetsTypes,DataGenerationTypes,models)
+#	createMasks(args,DatasetsTypes,DataGenerationTypes,models)
 
 	#Get Masked Accuracy
-	getMaskedAccuracy(args,DatasetsTypes,DataGenerationTypes,models,device)
+#	getMaskedAccuracy(args,DatasetsTypes,DataGenerationTypes,models,device)
 
 
 	#Get precsion and recall
-	getPrecisionRecall(args,DatasetsTypes,DataGenerationTypes,models)
+#	getPrecisionRecall(args,DatasetsTypes,DataGenerationTypes,models)
 
 
 	#Get AUC, AUR, AUP and AUPR
-	getAccuracyMetrics(args,DatasetsTypes,DataGenerationTypes,models)
+#	getAccuracyMetrics(args,DatasetsTypes,DataGenerationTypes,models)
 
 	#For Feature  and time level precsion and recall
-	getFeatureTimePrecisionRecall(args,DatasetsTypes,DataGenerationTypes,models)
+#	getFeatureTimePrecisionRecall(args,DatasetsTypes,DataGenerationTypes,models)
 	args.Feature_PrecisionRecall=True
 	args.Time_PrecisionRecall=True
-	getAccuracyMetrics(args,DatasetsTypes,DataGenerationTypes,models)
+#	getAccuracyMetrics(args,DatasetsTypes,DataGenerationTypes,models)
 
 
 
