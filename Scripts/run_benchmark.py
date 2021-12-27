@@ -25,7 +25,7 @@ DatasetsTypes= ["Middle", "SmallMiddle", "Moving_Middle", "Moving_SmallMiddle", 
 #DatasetsTypes = []
 
 ImpTimeSteps=[30,14,30,15,6,6, 40,40]
-ImpFeatures=[30,14,30,15,40,40,6,6]
+ImpFeatures=[30,14,30,15,40,40,10,10]
 
 StartImpTimeSteps=[10,18,10,18,22,22,5,5,None,None ]
 StartImpFeatures=[10,18,10,18,5,5,22,22,None,None ]
@@ -126,7 +126,7 @@ def parse_arguments(argv):
 	parser.add_argument('--Acc_Metrics_dir', type=str, default='../Results/Accuracy_Metrics/')
 
 	parser.add_argument('--num_classes', type=int, default=2)
-	parser.add_argument('--NumTimeSteps',type=int,default=50)
+	parser.add_argument('--NumTimeSteps',type=int,default=100)
 	parser.add_argument('--NumFeatures',type=int,default=50)
 	parser.add_argument('--d_a', type=int, default=50)
 	parser.add_argument('--attention_hops', type=int, default=10)
