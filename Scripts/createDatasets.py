@@ -2,15 +2,6 @@ from createSimulationDataProcesses import createSimulationDataProcesses
 
 
 
-
-
-
-
-
-
-
-
-
 def createDatasets(args,DatasetsTypes,ImpTimeSteps,ImpFeatures,StartImpTimeSteps,StartImpFeatures,Loc1,Loc2,FreezeType,isMoving,isPositional,DataGenerationTypes):
 
 	for i in range(len(DatasetsTypes)):
@@ -38,8 +29,3 @@ def createDatasets(args,DatasetsTypes,ImpTimeSteps,ImpFeatures,StartImpTimeSteps
 
 			createSimulationDataProcesses(args)
 			
-
-
-
-
-

@@ -20,12 +20,12 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 
-DatasetsTypes= ["Middle", "SmallMiddle", "Moving_Middle", "Moving_SmallMiddle", "RareTime", "Moving_RareTime", "RareFeature","Moving_RareFeature","PostionalTime", "PostionalFeature"]
+DatasetsTypes= ["Middle", "SmallMiddle", "Moving_Middle", "Moving_SmallMiddle", "RareTime", "Moving_RareTime", "RareFeature","Moving_RareFeature"]
 
 #DatasetsTypes = []
 
-ImpTimeSteps=[30,14,30,15,6,6, 40,40,20,20]
-ImpFeatures=[30,14,30,15,40,40,6,6,20,20]
+ImpTimeSteps=[30,14,30,15,6,6, 40,40]
+ImpFeatures=[30,14,30,15,40,40,6,6]
 
 StartImpTimeSteps=[10,18,10,18,22,22,5,5,None,None ]
 StartImpFeatures=[10,18,10,18,5,5,22,22,None,None ]
