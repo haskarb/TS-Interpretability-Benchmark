@@ -20,23 +20,29 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 
-DatasetsTypes= ["Middle", "SmallMiddle", "Moving_Middle", "Moving_SmallMiddle", "RareTime", "Moving_RareTime", "RareFeature","Moving_RareFeature"]
+#DatasetsTypes= ["Middle", "SmallMiddle", "Moving_Middle", "Moving_SmallMiddle", "RareTime", "Moving_RareTime", "RareFeature","Moving_RareFeature"]
+
+DatasetsTypes= ["RareTime", "Moving_RareTime", "RareFeature","Moving_RareFeature"]
 
 #DatasetsTypes = []
 
-ImpTimeSteps=[30,14,30,15,6,6, 40,40]
-ImpFeatures=[30,14,30,15,40,40,10,10]
+#ImpTimeSteps=[30,14,30,15,6,6, 40,40]
+#ImpFeatures=[30,14,30,15,40,40,10,10]
 
-StartImpTimeSteps=[10,18,10,18,22,22,5,5,None,None ]
-StartImpFeatures=[10,18,10,18,5,5,22,22,None,None ]
+ImpTimeSteps=[10,10, 40,40]
+ImpFeatures=[40,40,10,10]
+
+
+StartImpTimeSteps=[22,22,5,5]
+StartImpFeatures=[5,5,22,22]
 
 Loc1=[None,None,None,None,None,None,None,None,1,1]
 Loc2=[None,None,None,None,None,None,None,None,29,29]
 
 
-FreezeType = [None,None,None,None,None,None,None,None,"Feature","Time"]
-isMoving=[False,False,True,True,False,True,False,True,None,None]
-isPositional=[False,False,False,False,False,False,False,False,True,True]
+FreezeType = [None,None,None,None]
+isMoving=[False,True,False,True]
+isPositional=[False,False,False,False]
 
 DataGenerationTypes=["GaussianProcess", "PseudoPeriodic", "AutoRegressive"]
 
