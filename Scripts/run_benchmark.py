@@ -133,7 +133,7 @@ def parse_arguments(argv):
 
 	parser.add_argument('--num_classes', type=int, default=2)
 	parser.add_argument('--NumTimeSteps',type=int,default=100)
-	parser.add_argument('--NumFeatures',type=int,default=50)
+	parser.add_argument('--NumFeatures',type=int,default=100)
 	parser.add_argument('--d_a', type=int, default=50)
 	parser.add_argument('--attention_hops', type=int, default=10)
 	parser.add_argument('--n_layers', type=int, default=6)
