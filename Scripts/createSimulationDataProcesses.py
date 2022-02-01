@@ -85,7 +85,7 @@ def createDataset(args,NumberOFsamples):
 
 
 	for i in range (NumberOFsamples):
-		print(i)
+		#print(i)
 		if(Targets[i]==0):
 			Targets[i]=1
 
