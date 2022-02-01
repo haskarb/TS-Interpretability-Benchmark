@@ -110,7 +110,7 @@ def parse_arguments(argv):
 	parser.add_argument('--Order',type=int,default=10)
 
 
-	parser.add_argument('--NumTrainingSamples',type=int,default=500)
+	parser.add_argument('--NumTrainingSamples',type=int,default=1000)
 	parser.add_argument('--NumTestingSamples',type=int,default=100)
 	parser.add_argument('--ImpTimeSteps',type=int,default=40)
 	parser.add_argument('--ImpFeatures',type=int,default=40)
