@@ -69,8 +69,11 @@ def createDataset(args,NumberOFsamples):
 	TargetFeat_Ends=np.zeros((NumberOFsamples,))
 
 	if(args.isMoving):
+		#Randomly generating the locations for important timesteps/features
 		TargetTS_Starts = np.random.randint(args.NumTimeSteps-args.ImpTimeSteps, size=NumberOFsamples)
-		TargetFeat_Starts = np.random.randint(args.NumFeatures-args.ImpFeatures, size=NumberOFsamples)
+		#TargetFeat_Starts = np.random.randint(args.NumFeatures-args.ImpFeatures, size=NumberOFsamples)
+		#TargetTS_Starts=np.zeros((NumberOFsamples,))
+		TargetFeat_Starts=np.zeros((NumberOFsamples,))
 
 
 	else:
@@ -82,10 +85,12 @@ def createDataset(args,NumberOFsamples):
 
 
 	for i in range (NumberOFsamples):
+		print(i)
 		if(Targets[i]==0):
 			Targets[i]=1
 
 		TargetTS_Ends[i],TargetFeat_Ends[i] = TargetTS_Starts[i]+args.ImpTimeSteps, TargetFeat_Starts[i]+args.ImpFeatures
+		#print(args,Targets[i],int(TargetTS_Starts[i]),int(TargetTS_Ends[i]),int(TargetFeat_Starts[i]),int(TargetFeat_Ends[i]))
 		sample = createSample(args,Targets[i],int(TargetTS_Starts[i]),int(TargetTS_Ends[i]),int(TargetFeat_Starts[i]),int(TargetFeat_Ends[i]))
 
 		if(Targets[i]==-1):
@@ -107,11 +112,6 @@ def createDataset(args,NumberOFsamples):
 
 
 	return DataSet , metaData
-
-
-
-
-
 
 
 
