@@ -38,18 +38,18 @@ ImpFeatures=[40]
 
 
 
-StartImpTimeSteps=[22,22,5,5]
-StartImpFeatures=[5,5,22,22]
+StartImpTimeSteps=[22]
+StartImpFeatures=[5]
 
 Loc1=[None,None,None,None,None,None,None,None,1,1]
 Loc2=[None,None,None,None,None,None,None,None,29,29]
 
 
 FreezeType = [None,None,None,None]
-isMoving=[False,True,False,True]
+isMoving=[True]
 isPositional=[False,False,False,False]
 
-DataGenerationTypes=[None, "PseudoPeriodic", "AutoRegressive"]
+DataGenerationTypes=["GaussianProcess", "PseudoPeriodic", "AutoRegressive"]
 
 models=["Transformer" ,"LSTMWithInputCellAttention","TCN","LSTM"]
 
